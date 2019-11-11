@@ -9,8 +9,10 @@ let hamburgerMenu = function() {
         }
     });
     hamburgerMenu.click(function(e) {
+        $('.user-app-download-wrapper,.user-chat,.user-favorite').removeClass('icon-toggle');
         hamburgerMenu.toggleClass('on');
         body.toggleClass('opened');
+        body.removeClass('right-opened');
         return false;
     });
 
@@ -19,6 +21,7 @@ let hamburgerMenu = function() {
 
 //使用者已登入menu
 let userMenu = function() {
+    let hamburgerMenu = $(".hamburger-icon");
     let userMenu = $(".user-icon-already-login");
     let body = $('body');
     $(window).click(function() {
@@ -27,7 +30,10 @@ let userMenu = function() {
         }
     });
     userMenu.click(function(e) {
+        $('.user-app-download-wrapper,.user-chat,.user-favorite').removeClass('icon-toggle');
         body.toggleClass('right-opened');
+        hamburgerMenu.removeClass('on');
+        body.removeClass('opened');
         return false;
     })
 
